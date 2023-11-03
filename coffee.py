@@ -37,17 +37,6 @@ NICKEL = 0.05
 PENNY = 0.01
 
 
-# def check_resource(selected_product):
-#     if (
-#         resources["water"] >= MENU[selected_product]["ingredients"]["water"]
-#         and resources["coffee"] >= MENU[selected_product]["ingredients"]["coffee"]
-#         and resources["milk"] >= MENU[selected_product]["ingredients"]["milk"]
-#     ):
-#         return True
-#     else:
-#         return False
-
-
 def check_resource(selected_product):
     ingredients = MENU[selected_product]["ingredients"]
     lista = []
@@ -71,10 +60,6 @@ def check_money(user_money):
 
 
 def update_report(selected_product):
-    # resources["water"] -= MENU[selected_product]["ingredients"]["water"]
-    # resources["coffee"] -= MENU[selected_product]["ingredients"]["coffee"]
-    # resources["milk"] -= MENU[selected_product]["ingredients"]["milk"]
-    # resources["money"] += MENU[selected_product]["cost"]
     ingredients = MENU[selected_product]["ingredients"]
     for i in ingredients:
         resources[i] -= ingredients[i]
@@ -113,17 +98,3 @@ while True:
             print("Not enough coins. Money refunded.")
     else:
         print(f"Not enough: {', '.join(checked)}.")
-
-
-# TODO 1: ask the user what they want to order and check if they've chosen from the available selection;
-# TODO 2: if the ordered has been processed and served, ask for the next order;
-# TODO 3: if you want the program to shut down, the user can type in "off" and coffee machine will be turned off;
-# close while loop
-# TODO 4: print resources status if the user types in report;
-# TODO 5: after product selection, check if there are enough resources to process the order;
-# TODO 6: if the coffee machine has enough resources to process the order, ask the user to insert coins for payment;
-# check if enough money;
-# Remember that quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01;
-# TODO 7: if the payment is enough, the coffee machine starts using resources to process the order and the resources left will be updated (update report);
-# TODO 8: offer change if the user inserted too much money / reject order otherwise;
-# TODO 9: enough resources, enough money, update report (money) and serve drink.
